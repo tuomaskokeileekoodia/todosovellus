@@ -1,0 +1,82 @@
+<!--Lähteenä https://medium.com/codingthesmartway-com-blog/getting-started-with-axios-166cb0035237-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TodoFrontend</title>
+    <link rel="stylesheet" href="tyyli.css">
+    <script src = "https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src = koodi.js></script>
+
+</head>
+
+<body>
+<div class="'intro col-12">
+<h1>Elämän Todo</h1>
+</div>
+<br>
+<br>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">GET Request</div>
+        <div class="panel-body">
+            <button class="btn btn-primary" onclick="performGetRequest1()">Näytä kaikki Todot</button>
+<!--        <button class="btn btn-warning" onclick="clearOutput()">Clear</button>-->
+        <div class="panel-body" id="getResult1"></div>
+    </div>
+</div>
+<br>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">EI TOIMI</div>
+    <div class="panel-heading">GET Request with ID</div>
+    <div class="panel-body">
+        <input type="text" class="form-control" id="todoId" placeholder="Syötä yksittäinen ID"/><br/>
+        <button class="btn btn-primary" onclick="performGetRequestbyID()">Get Todos</button>
+<!--        <button class="btn btn-warning" onclick="clearOutput()">Clear</button>-->
+        <div class="panel-body" id="getResult2"></div>
+    </div>
+</div>
+<br>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">POST Request</div>
+    <div class="panel-body">
+        <form class="form-inline" id="todoInputForm">
+            <div class="form-group">
+                <input type="text" class="form-control" id="todoTitle" placeholder="Lisää Todo -tehtävä tänne">
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="performPostRequest()">Send</button>
+        </form><br/>
+<!--        <button class="btn btn-warning" onclick="clearOutput()">Clear</button>-->
+        <div class="panel-body" id="postResult"></div>
+    </div>
+</div>
+
+<div class="poistatoiminto">
+    <div class="panel-heading">DELETE Request</div>
+    <div class="panel-body">
+    <form class="form-inline" id="todoDeleteForm">
+        <div class="form-group">
+        <input type="text" class="form-control" id="todoIdPoistettava" placeholder="Kirjoita Todo:n id tänne">
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="performDeleteRequest()">Poista tehtävä</button>
+    </form><br/>
+    <div class="panel-body" id="deleteResult"></div>
+</div>
+</div>
+
+<table class="taulukko" id="todotehtavat">
+        <tbody id="TodoTaulukko"></tbody>
+</table>
+
+<br>
+
+<div class="footer">
+    <p>&copy <a>Tuomas Lahti </a> | <a>Mestarikoodari</a></p>
+</div>
+
+
+
+</body>
+</html>
